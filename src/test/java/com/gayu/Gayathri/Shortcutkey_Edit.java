@@ -101,21 +101,30 @@ public class Shortcutkey_Edit {
 				break;
 			}}}
 	@Test(priority=3)
-	public void CheckNotes() {
+	public void Direct_EditPage() {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 50);
 			Actions actions = new Actions(driver);
 	        actions.keyDown(Keys.SHIFT) 
-	               .sendKeys("O")  
+	               .sendKeys("o")  
 	               .keyUp(Keys.SHIFT)  
 	               .build()
 	               .perform();
-			Thread.sleep(3000);
-			System.out.println("--------------------------*****************-----------------------");
-			System.out.println("The Shortcutkeys is worked");
-		} catch (Exception e) {
-			System.out.println("The shortcutkeys is not worked");
-		}}
+	        WebElement LockedPerson = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Software Team']")));
+	        String actualText = LockedPerson.getText();           
+	        String expectedText = "Software Team";
+	        Assert.assertEquals(actualText, expectedText, "The retrieved text does not match the expected text.");	        
+	        Thread.sleep(3000);	        
+	        System.out.println("--------------------------*****************-----------------------");
+	        System.out.println("Assertion passed: The retrieved text matches the expected text.");
+	    } catch (InterruptedException e) {
+	        Thread.currentThread().interrupt();
+	        System.out.println("Thread interrupted while sleeping.");
+	    } catch (AssertionError e) {
+	        System.out.println("Assertion failed: " + e.getMessage());
+	    } catch (Exception e) {
+	        System.out.println("An error occurred: " + e.getMessage());
+	    }}
 		@AfterTest
 		public void tearDown() {
 			if (driver != null) {
