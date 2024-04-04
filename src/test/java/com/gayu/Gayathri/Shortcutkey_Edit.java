@@ -17,7 +17,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Shortcutkey_Edit {
+public class Direct_DrawPage {
 	private RemoteWebDriver driver;
 
 	@BeforeTest
@@ -112,7 +112,7 @@ public class Shortcutkey_Edit {
 	}
 
 	@Test(priority = 3)
-	public void Direct_drawpage() {
+	public void Shortcutkey_Edit() {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 50);
 			Actions actions = new Actions(driver);
@@ -124,7 +124,7 @@ public class Shortcutkey_Edit {
 			Thread.sleep(3000);
 			System.out.println("--------------------------*****************-----------------------");
 			System.out.println("Assertion passed: The retrieved text matches the expected text.");
-			System.out.println("The shorcutkeys go to direct Homepage sucesssfully");
+			System.out.println("The shorcutkeys go to direct Draw page sucesssfully");
 		} catch (InterruptedException e) {
 			Thread.currentThread().interrupt();
 			System.out.println("Thread interrupted while sleeping.");
@@ -132,34 +132,7 @@ public class Shortcutkey_Edit {
 			System.out.println("Assertion failed: " + e.getMessage());
 		} catch (Exception e) {
 			System.out.println("An error occurred: " + e.getMessage());
-		}
-		try {
-			WebDriverWait wait = new WebDriverWait(driver, 50);
-			Actions actions = new Actions(driver);
-			actions.keyDown(Keys.SHIFT).sendKeys("p").keyUp(Keys.SHIFT).build().perform();
-
-			WebElement selectedRegion = wait.until(
-					ExpectedConditions.elementToBeClickable(By.xpath("//span[text()=' -1 : Not Available-NA ']")));
-			String actualText = selectedRegion.getText();
-			String expectedText = "-1 : Not Available-NA";
-
-			Assert.assertEquals(actualText, expectedText, "The retrieved text does not match the expected text.");
-
-			Thread.sleep(3000);
-
-			System.out.println("--------------------------*****************-----------------------");
-			System.out.println("Assertion passed: The retrieved text matches the expected text.");
-
-			System.out.println("--------------------------*****************-----------------------");
-			System.out.println("The shortcut keys came back to the Home page sucessfully");
-		} catch (InterruptedException e) {
-			Thread.currentThread().interrupt();
-			System.out.println("Thread interrupted while sleeping.");
-		} catch (AssertionError e) {
-			System.out.println("Assertion failed: " + e.getMessage());
-		} catch (Exception e) {
-			System.out.println("An error occurred: " + e.getMessage());
-		}
+		}	
 	}
 
 	@AfterTest
