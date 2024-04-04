@@ -17,7 +17,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Direct_DrawPage {
+public class Shortcutkey_Edit {
 	private RemoteWebDriver driver;
 
 	@BeforeTest
@@ -112,7 +112,7 @@ public class Direct_DrawPage {
 	}
 
 	@Test(priority = 3)
-	public void Shortcutkey_Edit() {
+	public void Direct_drawpage() {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 50);
 			Actions actions = new Actions(driver);
