@@ -133,16 +133,16 @@ public class Shortcutkey_Edit {
 				System.out.println("--------------------------*****************-----------------------");
 				System.out.println("The draw menu button is not clicked");
 			}  
-					try {
-						WebDriverWait wait = new WebDriverWait(driver, 30);
-						WebElement unlock = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Unlock']")));
-						unlock.click();
-						System.out.println("--------------------------*****************-----------------------");
-						System.out.println("The Unlock button is clicked");
-					} catch (Exception e) {
-						System.out.println("--------------------------*****************-----------------------");
-						System.out.println("The Unlock button is not clicked");
-					}
+					// try {
+					// 	WebDriverWait wait = new WebDriverWait(driver, 30);
+					// 	WebElement unlock = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Unlock']")));
+					// 	unlock.click();
+					// 	System.out.println("--------------------------*****************-----------------------");
+					// 	System.out.println("The Unlock button is clicked");
+					// } catch (Exception e) {
+					// 	System.out.println("--------------------------*****************-----------------------");
+					// 	System.out.println("The Unlock button is not clicked");
+					// }
 					try {
 					    WebDriverWait wait = new WebDriverWait(driver, 30);
 					    
