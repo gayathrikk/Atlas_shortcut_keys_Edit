@@ -147,11 +147,11 @@ public class Shortcutkey_Edit {
 					    WebDriverWait wait = new WebDriverWait(driver, 30);
 					    
 					    // Wait for element and retrieve text
-					    WebElement LockedPerson = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(), 'SoftwareTesting Team')]")));
+					    WebElement LockedPerson = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(), 'software team')]")));
 
 					    // Get clean text
 					    String actualText = LockedPerson.getText().trim();
-					    String expectedText = "SoftwareTesting Team";
+					    String expectedText = "software team";
 
 					    // Debugging: Print retrieved text
 					    System.out.println("Actual text retrieved: [" + actualText + "]");
